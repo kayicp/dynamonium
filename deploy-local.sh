@@ -60,8 +60,10 @@ dfx deploy --specified-id vxkom-oyaaa-aaaar-qafda-cai ckbtc_converter --argument
 
 dfx ledger fabricate-cycles --canister vxkom-oyaaa-aaaar-qafda-cai --cycles 10_000_000_000_000 # 10T
 
-# dfx deploy --specified-id 6fwhw-fyaaa-aaaap-qb7ua-cai schnorr_canister
-
 # dfx canister call ckbtc_converter dynamonium_ckbtc_get_address '(vec { principal "ayr2v-v5ute-m3knd-ex52m-bczjv-2mrom-n22o4-v5t2o-hpxso-e7zdb-6ae" })'
 
 # dfx canister call ckbtc_converter dynamonium_ckbtc_generate_address
+
+# bitcoin-core.cli -conf=/home/t430/Projects/dynamonium/bitcoin.conf generatetoaddress 20 bcrt1qxjky9254m49zkzn82npe7s3sectfx540reufnt
+
+# dfx canister call ckbtc_converter dynamonium_ckbtc_check

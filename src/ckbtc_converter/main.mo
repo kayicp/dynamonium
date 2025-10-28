@@ -36,10 +36,6 @@ shared (install) persistent actor class Canister(is_testnet : Bool) = Self {
     } catch e #Err(Error.convert(e));
   };
 
-  // Send BTC to this address using your regtest node.
-
-  // bitcoin-core.cli -conf=/home/t430/Projects/dynamonium/bitcoin.conf generatetoaddress 20 bcrt1qxjky9254m49zkzn82npe7s3sectfx540reufnt
-
   public shared ({ caller }) func dynamonium_ckbtc_check() : async Result.Type<Nat64, { #GenericError : Error.Type; #UpdateBalanceError : CKBTC.Minter.UpdateBalanceError }> {
     let self = Principal.fromActor(Self);
     let subacc = Lib.p2subacc(caller);
