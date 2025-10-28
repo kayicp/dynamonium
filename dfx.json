@@ -1,0 +1,68 @@
+{
+  "canisters": {
+    "ckbtc_minter": {
+      "candid": "src/ckbtc_minter/can.did",
+      "wasm": "src/ckbtc_minter/main.wasm.gz",
+      "type": "custom",
+      "shrink": false
+    },
+    "ckbtc_ledger": {
+      "candid": "src/ckbtc_ledger/can.did",
+      "wasm": "src/ckbtc_ledger/main.wasm.gz",
+      "type": "custom",
+      "shrink": false
+    },
+    "ckbtc_kyt": {
+      "candid": "src/ckbtc_kyt/can.did",
+      "wasm": "src/ckbtc_kyt/main.wasm.gz",
+      "type": "custom",
+      "shrink": false
+    },
+    "ckbtc_index": {
+      "candid": "src/ckbtc_index/can.did",
+      "wasm": "src/ckbtc_index/main.wasm.gz",
+      "type": "custom",
+      "shrink": false
+    },
+    "ckbtc_converter": {
+      "main": "src/ckbtc_converter/main.mo",
+      "type": "motoko"
+    },
+    "dynamonium_frontend": {
+      "dependencies": [
+        "ckbtc_converter"
+      ],
+      "source": [
+        "src/dynamonium_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "dynamonium_frontend"
+    },
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    }
+  },
+  "defaults": {
+    "bitcoin": {
+      "enabled": true,
+      "log_level": "info",
+      "nodes": [
+        "127.0.0.1:18444"
+      ]
+    },
+    "build": {
+      "args": "",
+      "packtool": "mops sources"
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
